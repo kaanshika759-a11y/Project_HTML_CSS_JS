@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Expense Tracker</title>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="expense.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-wallet"></i>
+            </div>
+            <span>Expense<span class="logo-blue">Track</span></span>
+        </div>
+
+        <nav>
+            <a class="active">
+                <i class="fa-solid fa-house"></i>
+                Dashboard
+            </a>
+
+            <a>
+                <i class="fa-solid fa-plus"></i>
+                Add Expense
+            </a>
+
+            <a>
+                <i class="fa-solid fa-list"></i>
+                Expense List
+            </a>
+
+            <a>
+                <i class="fa-solid fa-chart-pie"></i>
+                Reports
+            </a>
+
+            <a>
+                <i class="fa-solid fa-wallet"></i>
+                Budget
+            </a>
+
+            <a>
+                <i class="fa-solid fa-gear"></i>
+                Settings
+            </a>
+        </nav>
+
+        <div class="side-card">
+            <h4>This Month</h4>
+
+            <p>Total Budget</p>
+            <b id="sideBudget">₹0</b>
+
+            <p>Total Expense</p>
+            <b id="sideExpense">₹0</b>
+
+            <p>Remaining</p>
+            <b class="green" id="sideRemaining">₹0</b>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <button class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <div class="top-right">
+
+                <i class="fa-regular fa-bell notification"></i>
+
+                <div class="profile">
+                    <div class="avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div>
+                        <b id="profileName">Student</b>
+                        <small>Student</small>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- CONTENT -->
+        <section class="content">
+
+            <div class="page-heading">
+                <div>
+                    <h1>Expense Dashboard</h1>
+                    <p>Track your expenses and manage your budget easily.</p>
+                </div>
+
+                <button class="small-btn">
+                    <i class="fa-solid fa-calendar"></i>
+                    Monthly
+                </button>
+            </div>
+
+
+            <!-- SUMMARY CARDS -->
+
+            <div class="cards">
+
+                <div class="summary-card">
+                    <div class="card-icon blue">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+
+                    <div>
+                        <p>Total Budget</p>
+                        <h2 id="budgetCard">₹0</h2>
+                    </div>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="card-icon orange">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                    </div>
+
+                    <div>
+                        <p>Total Expense</p>
+                        <h2 id="expenseCard">₹0</h2>
+                    </div>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="card-icon green-bg">
+                        <i class="fa-solid fa-piggy-bank"></i>
+                    </div>
+
+                    <div>
+                        <p>Remaining</p>
+                        <h2 id="remainingCard">₹0</h2>
+                    </div>
+                </div>
+
+
+                <div class="summary-card">
+                    <div class="card-icon purple">
+                        <i class="fa-solid fa-percent"></i>
+                    </div>
+
+                    <div>
+                        <p>Expense %</p>
+                        <h2 id="percentageCard">0%</h2>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- FORM + TIPS -->
+
+            <div class="grid">
+
+                <div class="form-card">
+
+                    <div class="section-title">
+                        <h2>Add New Expense</h2>
+                        <p>Enter your monthly expense details below.</p>
+                    </div>
+
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>Student Name</label>
+
+                            <div class="input-box">
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text"
+                                       id="name"
+                                       placeholder="Enter your full name">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Roll Number</label>
+
+                            <div class="input-box">
+                                <i class="fa-solid fa-id-card"></i>
+                                <input type="number"
+                                       id="roll"
+                                       placeholder="Enter roll number">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Select Month</label>
+
+                            <div class="input-box">
+                                <i class="fa-regular fa-calendar"></i>
+
+                                <select id="month">
+                                    <option value="">Select Month</option>
+                                    <option>January</option>
+                                    <option>February</option>
+                                    <option>March</option>
+                                    <option>April</option>
+                                    <option>May</option>
+                                    <option>June</option>
+                                    <option>July</option>
+                                    <option>August</option>
+                                    <option>September</option>
+                                    <option>October</option>
+                                    <option>November</option>
+                                    <option>December</option>
+                                </select>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Total Budget</label>
+
+                            <div class="input-box">
+                                <span class="rupee">₹</span>
+
+                                <input type="number"
+                                       id="budget"
+                                       placeholder="Enter total budget">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <h3 class="expense-heading">Expense Categories</h3>
+
+
+                    <div class="expense-grid">
+
+                        <div class="form-group">
+                            <label>Food Expense</label>
+
+                            <div class="input-box food">
+                                <i class="fa-solid fa-utensils"></i>
+
+                                <input type="number"
+                                       id="food"
+                                       placeholder="Food expense">
+                            </div>
+                        </div>
+                        <div class="form-group">
+    <label>Room Rent</label>
+
+    <div class="input-box">
+        <i class="fa-solid fa-house"></i>
+
+        <input type="number"
+               id="roomRent"
+               placeholder="Enter room rent">
+    </div>
+</div>
+
+                        <div class="form-group">
+                            <label>Education Expense</label>
+
+                            <div class="input-box education">
+                                <i class="fa-solid fa-book"></i>
+
+                                <input type="number"
+                                       id="education"
+                                       placeholder="Education expense">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Stationery Expense</label>
+
+                            <div class="input-box stationery">
+                                <i class="fa-solid fa-pen"></i>
+
+                                <input type="number"
+                                       id="stationary"
+                                       placeholder="Stationery expense">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Travel Expense</label>
+
+                            <div class="input-box travel">
+                                <i class="fa-solid fa-car"></i>
+
+                                <input type="number"
+                                       id="travel"
+                                       placeholder="Travel expense">
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Online Education</label>
+
+                            <div class="input-box course">
+                                <i class="fa-solid fa-laptop"></i>
+
+                                <input type="number"
+                                       id="course"
+                                       placeholder="Online course expense">
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <button class="calculate-btn"
+                            onclick="calculateExpense()">
+
+                        <i class="fa-solid fa-calculator"></i>
+
+                        Calculate Expense
+                    </button>
+
+                </div>
+
+
+                <!-- TIPS -->
+
+                <div class="tips-card">
+
+                    <div class="illustration">
+                        <i class="fa-solid fa-file-invoice-dollar"></i>
+                    </div>
+
+                    <h2>Smart Spending Tips</h2>
+
+                    <div class="tip">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Add all your expenses accurately.</span>
+                    </div>
+
+                    <div class="tip">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>Review your expenses regularly.</span>
+                    </div>
+
+                    <div class="tip">
+                        <i class="fa-solid fa-bullseye"></i>
+                        <span>Try to stay within your budget.</span>
+                    </div>
+
+                    <div class="tip">
+                        <i class="fa-solid fa-piggy-bank"></i>
+                        <span>Save more and spend wisely.</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RESULT -->
+
+            <div class="result-card">
+
+                <div class="section-title">
+                    <h2>Expense Report</h2>
+                    <p id="studentInfo">Enter your details and calculate your expense.</p>
+                </div>
+
+
+                <div class="report-boxes">
+
+                    <div>
+                        <span>Total Expense</span>
+                        <strong id="totalExpense">₹0</strong>
+                    </div>
+
+                    <div>
+                        <span>Remaining Budget</span>
+                        <strong id="savedMoney">₹0</strong>
+                    </div>
+
+                    <div>
+                        <span>Expense Percentage</span>
+                        <strong id="reportPercentage">0%</strong>
+                    </div>
+
+                </div>
+
+
+                <p id="message" class="message"></p>
+
+            </div>
+
+
+            <!-- TABLE + CHART -->
+
+            <div class="bottom-grid">
+
+                <div class="table-card">
+
+                    <div class="section-title">
+                        <h2>Expense Breakdown</h2>
+                        <p>Your spending by category.</p>
+                    </div>
+
+                    <table id="expenseTable">
+
+                        <thead>
+                            <tr>
+                                <th>Expense Type</th>
+                                <th>Amount</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tableBody"></tbody>
+
+                    </table>
+
+                </div>
+
+
+                <div class="chart-card">
+
+                    <div class="section-title">
+                        <h2>Expense Overview</h2>
+                    </div>
+
+                    <canvas id="expenseChart"></canvas>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="expense.js"></script>
+
+</body>
+</html>
