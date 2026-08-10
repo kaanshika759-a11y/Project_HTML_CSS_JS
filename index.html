@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Apni Awaaz</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <h1 class="title">𝐀𝐩𝐧𝐢 𝐀𝐰𝐚𝐚𝐳</h1>
+
+  <p class="subtitle">Bina dare, apni baat rakho</p>
+
+  <p class="question">Aapko kis type ki help chahiye?</p>
+
+  <input type="text" id="name" placeholder="Enter your name">
+
+  <button class="start-btn" onclick="startApp()">Start</button>
+
+  <p id="welcome"></p>
+
+  <div class="btn-group">
+    <button onclick="selectUser('Student')">Student</button>
+    <button onclick="selectUser('Worker')">Worker</button>
+    <button onclick="selectUser('General')">General</button>
+  </div>
+
+  <div id="result"></div>
+  <div id="problems"></div>
+  <div id="supportBox"></div>
+  <div id="reply"></div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
