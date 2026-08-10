@@ -1,0 +1,144 @@
+body {
+  font-family: Arial;
+  background: #eef3ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background: rgb(238, 216, 216);
+  padding: 200px;
+  width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.title{  
+    font-size: 65px;
+  font-weight: bold;
+  color:#11023d;
+}
+
+
+.subtitle {
+  font-size: 30px;
+  color: #2c0101;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+input {
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.start-btn {
+    font-size: 20px;
+    font-family: sans-serif;
+  width: 100%;
+  padding: 10px;
+  background: #1f4cff;
+  color: white;
+  border: rgb(5, 5, 38);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-group button {
+  margin: 15px;
+  padding: 20px;
+  border: none;
+  border-radius: 8px;
+  background: #948da2;
+  cursor: pointer;
+  font-family:Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  font-style:normal;
+}
+
+#problems button {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #f2f2f2;
+  cursor: pointer;
+}
+
+
+
+
+
+#username{
+
+    width:90%;
+
+    padding:18px;
+
+    font-size:20px;
+
+    border-radius:15px;
+
+    border:2px solid #667eea;
+
+    outline:none;
+    box-sizing:border-box;
+
+}
+.name-box button{
+
+    width:90%;
+
+    margin-top:20px;
+
+    background:#667eea;
+
+    color:rgb(255, 255, 255);
+
+    font-weight:bold;
+
+}
+button:hover{
+
+    transform:scale(1.08);
+
+    background:#81a9b8;
+
+    color:rgb(42, 49, 146);
+
+}
+#result{
+
+    margin-top:35px;
+
+    font-size:25px;
+
+    color:#11023d;
+
+    font-weight:bold;
+
+}
+textarea{
+
+    width:90%;
+
+    height:120px;
+
+    border-radius:15px;
+
+    padding:15px;
+
+    font-size:50px;
+}
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:20px;
+}
